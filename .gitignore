@@ -1,4 +1,1 @@
-/node_modules/
-/.idea/
-/.git/
-/dist/
+node_modules
