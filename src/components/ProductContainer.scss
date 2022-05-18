@@ -14,7 +14,7 @@
     width: 765px;
     height: 250px;
     background-color: transparent;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     padding-left: 35px;
     padding-right: 20px;
     border-radius: 1rem;
@@ -44,7 +44,7 @@
 
 .info-price {
     font-size: 30px;
-    margin-top: 60px;
+    margin-top: 100px;  
 }
 
 .btn {
@@ -65,5 +65,16 @@
     font-size: 50px;
     text-align: center;
     padding-top: 30px;
+    color: black;
+}
+
+.info-product {
+    width: 150px;
+    height: 150px;
+    padding-top: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 20px;
     color: black;
 }
