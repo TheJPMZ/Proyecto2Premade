@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import ProductContainer from './ProductContainer';
 import firebase from "../firebase";
 import GetInfo from "./GetInfo";
 
@@ -26,10 +27,10 @@ function App() {
 
     return (
         <>
+            <div><ProductContainer></ProductContainer></div>
             <h1>Memes</h1>
             <button onClick={addCompra}>Comprar</button>
             <GetInfo />
-
         </>
     );
 }

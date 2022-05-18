@@ -1,0 +1,81 @@
+.prodCon {
+    width: 800px;
+    height: 250px;
+    background-color: #fafafa75;
+    margin: 0 auto;
+    position: sticky;
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+    font-size: 70px;
+}
+
+.prodConGrid {
+    display: grid;
+    width: 765px;
+    height: 250px;
+    background-color: transparent;
+    grid-template-columns: auto auto auto auto;
+    padding-left: 35px;
+    padding-right: 20px;
+    border-radius: 1rem;
+}
+
+.grid-infoProduct {
+    margin-left: 5px;
+    font-size: 13px;
+    color: black;
+    align-items: center;
+    width: 200px;
+}
+
+.grid-infoProductSize {
+    display: grid;
+    grid-template-rows: auto auto;
+    font-size: 13px;
+    color: black;
+    margin-top: 20px;
+}
+
+.grid-infoProductSize2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 15px;
+}
+
+.info-price {
+    font-size: 30px;
+    margin-top: 100px;
+    
+}
+
+.btn {
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+.product-size {
+    width: 80px;
+    height: 80px;
+    background-color: #cea1a175;
+    padding-top: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    margin-left: 60px;
+    border-radius: 1rem;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 30px;
+    color: black;
+}
+
+.info-product {
+    width: 150px;
+    height: 150px;
+    padding-top: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 20px;
+    color: black;
+}
