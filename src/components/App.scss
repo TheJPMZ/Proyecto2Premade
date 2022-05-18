@@ -1,0 +1,30 @@
+.Containerñ{
+    background-color: rgb(164, 109, 25);
+    
+   
+}
+.descrip{ 
+      margin:0 auto;
+      height: 70%;
+      width: 70%;
+      text-align: center;
+      flex-basis: 20rem;
+      flex-grow: 1;
+      background-color: rgb(236, 223, 221);
+      border-color: solid black;
+
+}
+
+.grid-columns{
+    display: grid;
+    grid-template-columns: auto auto auto 
+}
+.display-productos{
+      margin:0 auto;
+      justify-self: center;
+      width: 60%;
+      flex-basis: 0;
+      flex-grow: 999;
+      min-width: 40%;
+
+}
