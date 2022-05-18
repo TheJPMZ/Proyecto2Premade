@@ -1,9 +1,9 @@
-.Containerñ{
+.Container{
     background-color: rgb(164, 109, 25);
-    
-   
+
+
 }
-.descrip{ 
+.descrip{
       margin:0 auto;
       height: 70%;
       width: 70%;
@@ -11,13 +11,12 @@
       flex-basis: 20rem;
       flex-grow: 1;
       background-color: rgb(236, 223, 221);
-      border-color: solid black;
 
 }
 
 .grid-columns{
     display: grid;
-    grid-template-columns: auto auto auto 
+    grid-template-columns: auto auto auto
 }
 .display-productos{
       margin:0 auto;
@@ -29,5 +28,5 @@
 }
 
 body{
-    background-color: #000000;  
+    background-color: #000000;
 }

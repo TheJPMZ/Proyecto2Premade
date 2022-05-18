@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProductContainer.scss';
+import '../ProductContainer/ProductContainer.scss';
 
 // const {producto, add} = state;
 
