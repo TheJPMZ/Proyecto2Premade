@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.scss';
+import ProductContainer from './ProductContainer';
 
 function App() {
     return (
         <>
-            <h1>Hello World</h1>
+            <div><ProductContainer></ProductContainer></div>
         </>
     );
 }
