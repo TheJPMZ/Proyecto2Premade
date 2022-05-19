@@ -4,7 +4,7 @@ import '../ProductContainer/ProductContainer';
 import ProductContainer from '../ProductContainer/ProductContainer';
 import Boton from "../Boton/Boton";
 
-function ContainerGeneral({listaproductos}) {
+function ContainerGeneral({listaproductos, id}) {
 
     return (
         <div className='Container'>
@@ -20,7 +20,7 @@ function ContainerGeneral({listaproductos}) {
                     <ProductContainer test={Number}/>
                 ))}
             </div>
-            <Boton/>
+            <Boton arr={listaproductos} id={id}/>
         </div>
     );
 }
