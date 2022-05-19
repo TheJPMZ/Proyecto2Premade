@@ -119,43 +119,46 @@ var props = {
 
 export default function Boton({arr,id}) {
 
-    const saveToDatabase = (item, fecha) => {
-        firebase.firestore().collection('compras').add({
+    const saveToDatabase = (db,item, fecha) => {
+        db.collection('compras').add({
             cantidad: item.cantidad, //TODO: Cantidad de compras se tiene que modificar
             fecha: fecha,
             id: item.itemcode,
             usercode: id
         })
-        console.log("Guardado en la base de datos");
     }
 
-    const deleteFromCarrito = (id) => {
-        alert(id)
-        firebase.firestore().collection('carrito').doc(id).delete()
-        console.log("Eliminado del carrito");
+    const deleteFromCarrito = (db,id) => {
+        db.collection('carrito').doc(id).delete().then(r => {
+            console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
     }
 
-    const removeFromInventario = (item, cantidad) => {
-        firebase.firestore().collection('inventario').doc(item.itemcode).update({
+    const removeFromInventario = (db,item, cantidad) => {
+        db.collection('inventario').doc(item.itemcode).update({
             cantidad: firebase.firestore.FieldValue.increment(-cantidad),
-            cant_ventas:  firebase.firestore.FieldValue.increment(cantidad)
+            cant_ventas: firebase.firestore.FieldValue.increment(cantidad)
         })
-        console.log("Eliminado del inventario");
     }
 
-    const databasethings = () => {
+    const databasethings = async () => {
+        const db = firebase.firestore()
         const fecha = new Date();
-        arr.map((item) => (
-            saveToDatabase(item, fecha)
+        await arr.map((item) => (
+            saveToDatabase(db,item, fecha)
         ))
-        deleteFromCarrito(id);
-        removeFromInventario(arr[0], arr[0].cantidad);
+        await deleteFromCarrito(db,id);
+        await removeFromInventario(db,arr[0], arr[0].cantidad);
+        return true;
     }
 
     async function handleClick() {
 
         await databasethings()
 
+        await new Promise(resolve => setTimeout(resolve, 400));
         console.log(jsPDFInvoiceTemplate(props))
 
     }
