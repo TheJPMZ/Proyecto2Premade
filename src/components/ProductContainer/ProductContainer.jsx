@@ -12,8 +12,11 @@ function ProductContainer({test}) {
 
     function incrementar () {
         // ++
-        setcont(cont + 1)
-        setprice(price + test.precio)
+        if (cont < test.cantidad) {
+            setcont(cont + 1)
+            setprice(price + test.precio)
+        }
+
     }
 
     function decrementar () {

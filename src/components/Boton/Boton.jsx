@@ -2,7 +2,9 @@
 import React from "react";
 import './Boton.scss'
 import jsPDFInvoiceTemplate, { OutputType, jsPDF } from "jspdf-invoice-template";
+import firebase from "../../firebase";
 
+import ProductContainer from "../ProductContainer/ProductContainer";
 
 
 var props = {
@@ -45,23 +47,23 @@ var props = {
       tableBodyBorder: false,
       header: [
         {
-          title: "#", 
-          style: { 
-            width: 10 
-          } 
-        }, 
-        { 
+          title: "#",
+          style: {
+            width: 10
+          }
+        },
+        {
           title: "Title",
           style: {
             width: 30
-          } 
-        }, 
-        { 
+          }
+        },
+        {
           title: "Description",
           style: {
             width: 80
-          } 
-        }, 
+          }
+        },
         { title: "Price"},
         { title: "Quantity"},
         { title: "Unit"},
@@ -69,7 +71,7 @@ var props = {
 
        /* [objeto 1[index, title, costo, cantidad, "unidades", total]]*/
       ],
-      table: Array.from(Array(10), (item, index)=>([ 
+      table: Array.from(Array(10), (item, index)=>([
           index + 1,
           "There are many variations ",
           "Lorem Ipsum is simply dummy text dummy text ",
@@ -115,12 +117,48 @@ var props = {
 
 
 
-export default function Boton({arr}) {
+export default function Boton({arr,id}) {
 
-  function handleClick() {
-    console.log(jsPDFInvoiceTemplate(props))
+    const saveToDatabase = (item, fecha) => {
+        firebase.firestore().collection('compras').add({
+            cantidad: item.cantidad, //TODO: Cantidad de compras se tiene que modificar
+            fecha: fecha,
+            id: item.itemcode,
+            usercode: id
+        })
+        console.log("Guardado en la base de datos");
+    }
 
-  }
+    const deleteFromCarrito = (id) => {
+        alert(id)
+        firebase.firestore().collection('carrito').doc(id).delete()
+        console.log("Eliminado del carrito");
+    }
+
+    const removeFromInventario = (item, cantidad) => {
+        firebase.firestore().collection('inventario').doc(item.itemcode).update({
+            cantidad: firebase.firestore.FieldValue.increment(-cantidad),
+            cant_ventas:  firebase.firestore.FieldValue.increment(cantidad)
+        })
+        console.log("Eliminado del inventario");
+    }
+
+    const databasethings = () => {
+        const fecha = new Date();
+        arr.map((item) => (
+            saveToDatabase(item, fecha)
+        ))
+        deleteFromCarrito(id);
+        removeFromInventario(arr[0], arr[0].cantidad);
+    }
+
+    async function handleClick() {
+
+        await databasethings()
+
+        console.log(jsPDFInvoiceTemplate(props))
+
+    }
 
   return (
    <>
