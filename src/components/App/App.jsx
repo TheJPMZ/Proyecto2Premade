@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import './App.scss';
-import ProductContainer from '../ProductContainer/ProductContainer';
 import ContainerGeneral from "../ContainerGeneral/ContainerGeneral";
 import firebase from "../../firebase";
-import GetInfo from "../GetInfo/GetInfo";
+import Header from '../Header/Header';
 
 function useInfo() {
 
@@ -41,6 +40,7 @@ function App() {
 
     return (
         <>
+            <Header/>
             {info.map((item) =>
                 <ContainerGeneral listaproductos={item.items}/>
             )}
