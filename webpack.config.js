@@ -21,13 +21,23 @@ module.exports = {
                 },
             },
             {
-                test: /\.scss$/i,
+                test: /\.s[ac]ss$/i,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader',
+                  MiniCssExtractPlugin.loader,
+                  {
+                    loader: "css-loader",
+                    options: {
+                      sourceMap: true,
+                    },
+                  },
+                  {
+                    loader: "sass-loader",
+                    options: {
+                      sourceMap: true,
+                    },
+                  },
                 ],
-            },
+              },
             {
                 test: /\.mp3$/,
                 loader: 'file-loader',
