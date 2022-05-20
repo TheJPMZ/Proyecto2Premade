@@ -19,6 +19,16 @@ import ProductContainer from "../ProductContainer/ProductContainer";
 
 export default function Boton({arr,id}) {
 
+    var porcentaje = 20;
+
+    const getTotal = (arreglo) => {
+        let total = 0;
+        for (let i = 0; i < arreglo.length; i++) {
+            total += arreglo[i].cantidad*arreglo[i].precio;
+        }
+        return total.toString();
+    }
+
     var props = {
   outputType: OutputType.Save,
   returnJsPDFDocObject: true,
@@ -83,21 +93,21 @@ export default function Boton({arr,id}) {
 
        /* [objeto 1[index, title, costo, cantidad, "unidades", total]]*/
       ],
-      table: Array.from(Array(10), (item, index)=>([
-          index + 1,
-          "There are many variations ",
-          "Lorem Ipsum is simply dummy text dummy text ",
-          200.5,
-          4.5,
-          "m2",
-          400.5
-      ])),
+      table: Array.from(arr,(item,index)=>([
+        index + 1,
+        item.nombre,
+        item.nombre,
+        item.precio,
+        item.cantidad,
+        item.itemcode,
+        (item.cantidad*item.precio)]
+    )),
       invTotalLabel: "Total:",
-      invTotal: "145,250.50",
+      invTotal: getTotal(arr).toString(),
       invCurrency: "ALL",
       row1: {
           col1: 'VAT:',
-          col2: '20',
+          col2: porcentaje.toString(),
           col3: '%',
           style: {
               fontSize: 10 //optional, default 12
@@ -105,7 +115,7 @@ export default function Boton({arr,id}) {
       },
       row2: {
           col1: 'SubTotal:',
-          col2: '116,199.90',
+          col2:  (getTotal(arr)/(1+porcentaje/100)).toString(),
           col3: 'ALL',
           style: {
               fontSize: 10 //optional, default 12
@@ -163,9 +173,22 @@ export default function Boton({arr,id}) {
         await new Promise(resolve => setTimeout(resolve, 400));
         console.log(jsPDFInvoiceTemplate(props))
         console.log("Se está imprimiendo")
-        console.log(arr)
+        let hola;
+        hola = Array.from(arr,(item,index)=>([
+            index + 1,
+            item.nombre,
+            item.nombre,
+            item.precio,
+            item.cantidad,
+            item.itemcode,
+            (item.cantidad*item.precio)]
+        ))
+        
+        console.log(getTotal(arr))
 
     }
+
+
 
   return (
    <>
