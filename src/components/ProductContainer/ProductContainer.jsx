@@ -28,11 +28,11 @@ function ProductContainer({test}) {
     }
 
     function saveAmount () {
-
+        console.log(test.cantidad)
     }
 
     function savePrice () {
-
+        console.log(test.precio)
     }
 
     return (
