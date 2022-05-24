@@ -26,6 +26,7 @@ function ProductContainer({test}) {
             setprice(price - test.precio)
         }
     }
+
     function saveAmount () {
         console.log(test.cantidad)
     }

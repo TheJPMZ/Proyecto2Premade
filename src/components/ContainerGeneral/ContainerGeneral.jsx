@@ -11,6 +11,7 @@ function ContainerGeneral({listaproductos, id}) {
         
     }
 
+
     return (
         <div className='Container'>
             <div className='descrip'>
@@ -25,7 +26,9 @@ function ContainerGeneral({listaproductos, id}) {
                     <ProductContainer test={Number}/>
                 ))}
                 <div>
-                    <h1 className='total'>Total:</h1>
+                    <h1 className='total'>Total:
+                    
+                    </h1>
 
                 </div>
             </div>
