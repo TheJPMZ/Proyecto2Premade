@@ -28,7 +28,9 @@
     "jspdf-invoice-template": "^1.4.2",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "sass": "^1.52.1",
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",

@@ -3,8 +3,13 @@ import '../App/App.scss';
 import '../ProductContainer/ProductContainer';
 import ProductContainer from '../ProductContainer/ProductContainer';
 import Boton from "../Boton/Boton";
+import '../ContainerGeneral/ContainerGeneral.scss';
+
 
 function ContainerGeneral({listaproductos, id}) {
+    function total(){
+        
+    }
 
     return (
         <div className='Container'>
@@ -19,6 +24,10 @@ function ContainerGeneral({listaproductos, id}) {
                 {listaproductos.map((Number) =>(
                     <ProductContainer test={Number}/>
                 ))}
+                <div>
+                    <h1 className='total'>Total:</h1>
+
+                </div>
             </div>
             <Boton arr={listaproductos} id={id}/>
         </div>
