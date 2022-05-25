@@ -8,6 +8,7 @@ function ProductContainer({test}) {
 
     const [cont, setcont] = useState(0)
     const [price, setprice] = useState(0)
+    let vari 
     let title = ["hola", "hola2", "hola3"]
 
     function incrementar () {
@@ -15,9 +16,12 @@ function ProductContainer({test}) {
         if (cont < test.cantidad) {
             setcont(cont + 1)
             setprice(price + test.precio)
+            // console.log(test.precio * setcont(cont + 1))
         }
 
     }
+
+   
 
     function decrementar () {
         // --
@@ -27,12 +31,8 @@ function ProductContainer({test}) {
         }
     }
 
-    function saveAmount () {
-        console.log(test.cantidad)
-    }
-
     function savePrice () {
-        console.log(test.precio)
+        console.log(test.precio * cont)
     }
 
     return (
@@ -54,6 +54,7 @@ function ProductContainer({test}) {
                             <div className='grid-infoProductSize2'>
                                 <button type="button" className="btn" onClick={decrementar}> <img src={Left} height ="50" width="50" /></button>
                                 <button type="button" className="btn" onClick={incrementar}> <img src={Right} height ="50" width="50" /></button>
+                                {/* <button type="button" className="btn" onClick={savePrice}> <img src={Right} height ="50" width="50" /></button> */}
                             </div>
                     </div>
                 </div>
