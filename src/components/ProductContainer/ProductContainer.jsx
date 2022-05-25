@@ -59,6 +59,7 @@ function ProductContainer({test}) {
                 </div>
                 <div className='grid-infoProduct'>
                     <div className='info-price'>Q{price}</div>
+                    <button onClick={savePrice}>holis</button>
                 </div>
             </div>
         </div>
