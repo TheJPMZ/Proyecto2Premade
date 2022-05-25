@@ -26,7 +26,7 @@ export default function Boton({arr,id}) {
         for (let i = 0; i < arreglo.length; i++) {
             total += arreglo[i].cantidad*arreglo[i].precio;
         }
-        return total.toString();
+        return (Math.round(total * 100) /100).toString();
     }
 
     var props = {
@@ -45,12 +45,12 @@ export default function Boton({arr,id}) {
       }
   },
   business: {
-      name: "Business Name",
-      address: "Albania, Tirane ish-Dogana, Durres 2001",
-      phone: "(+355) 069 11 11 111",
-      email: "email@example.com",
-      email_1: "info@example.al",
-      website: "www.example.al",
+      name: "AMAX",
+      address: "Guatemala, Guatemala",
+      phone: "(+502) 1792-0404",
+      email: "amaxsales@company.com",
+      email_1: "amxsales@company.al",
+      website: "www.amax.com",
   },
   contact: {
       label: "Invoice issued for:",
@@ -63,8 +63,8 @@ export default function Boton({arr,id}) {
   invoice: {
       label: "Invoice #: ",
       num: 19,
-      invDate: "Payment Date: 01/01/2021 18:12",
-      invGenDate: "Invoice Date: 02/02/2021 10:17",
+      invDate: "Payment Date: " + new Date().toLocaleDateString(),
+      invGenDate: "Invoice Date: " + new Date().toLocaleDateString(),
       headerBorder: false,
       tableBodyBorder: false,
       header: [
