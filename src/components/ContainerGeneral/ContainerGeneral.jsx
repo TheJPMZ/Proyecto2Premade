@@ -61,7 +61,6 @@ function ContainerGeneral({listaproductos, id}) {
                 </div>
             </div>
             <Boton arr={generarLista()} id={id}/>
-            <button onClick={generarLista}>Generar Lista</button>
         </div>
     );
 }
