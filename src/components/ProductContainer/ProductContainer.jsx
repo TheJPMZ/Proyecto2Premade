@@ -3,11 +3,15 @@ import './ProductContainer.scss';
 import Producto from '../../assets/product.png'
 import Left from '../../assets/left.png'
 import Right from '../../assets/right.png'
+import total  from '../ContainerGeneral/total'
+
 
 function ProductContainer({test}) {
 
     const [cont, setcont] = useState(0)
     const [price, setprice] = useState(0)
+    const {getIndexTotal,getCantidades,resetTotal,ResTotal,addTotal} = total()
+    let vari 
     let title = ["hola", "hola2", "hola3"]
 
     function incrementar () {
@@ -15,24 +19,30 @@ function ProductContainer({test}) {
         if (cont < test.cantidad) {
             setcont(cont + 1)
             setprice(price + test.precio)
+            addTotal(test.precio)
+            
+            // console.log(test.precio * setcont(cont + 1))
         }
 
     }
+
+   
 
     function decrementar () {
         // --
         if(cont >= 1){
             setcont(cont - 1)
             setprice(price - test.precio)
+            ResTotal(test.precio)
         }
     }
 
-    function saveAmount () {
-        console.log(test.cantidad)
+    function saveCanti () {
+        console.log(cont)
     }
 
     function savePrice () {
-        console.log(test.precio)
+        console.log(test.precio * cont)
     }
 
     return (
@@ -59,7 +69,6 @@ function ProductContainer({test}) {
                 </div>
                 <div className='grid-infoProduct'>
                     <div className='info-price'>Q{price}</div>
-                    <button onClick={savePrice}>holis</button>
                 </div>
             </div>
         </div>
