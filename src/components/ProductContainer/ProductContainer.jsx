@@ -10,9 +10,7 @@ function ProductContainer({test}) {
 
     const [cont, setcont] = useState(0)
     const [price, setprice] = useState(0)
-    const {getIndexTotal,getCantidades,resetTotal,ResTotal,addTotal} = total()
-    let vari 
-    let title = ["hola", "hola2", "hola3"]
+    const {getIndexTotal,getCantidades,resetTotal,ResTotal,addTotal,updateCantidades} = total()
 
     function incrementar () {
         // ++
@@ -20,13 +18,12 @@ function ProductContainer({test}) {
             setcont(cont + 1)
             setprice(price + test.precio)
             addTotal(test.precio)
-            
-            // console.log(test.precio * setcont(cont + 1))
+            updateCantidades(test.itemcode,cont+1)
         }
 
     }
 
-   
+
 
     function decrementar () {
         // --
@@ -34,6 +31,7 @@ function ProductContainer({test}) {
             setcont(cont - 1)
             setprice(price - test.precio)
             ResTotal(test.precio)
+            updateCantidades(test.itemcode,cont-1)
         }
     }
 

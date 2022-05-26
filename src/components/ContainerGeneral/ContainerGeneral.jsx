@@ -10,19 +10,34 @@ import { useState } from 'react';
 
 function ContainerGeneral({listaproductos, id}) {
     const [total1 ,setTotal ] = useState(0)
-    const {getIndexTotal,getCantidades,resetTotal,ResTotal,addTotal} = total()
+    const {getIndexTotal,getCantidades,resetTotal,ResTotal,addTotal,updateCantidades} = total()
 
     function llamarTotal (){
         setTotal(getIndexTotal())
     }
-    // function tot(){
-    //     let to = 0;
-    //     for (let i = 0; i < listaproductos.length; i++) {
-    //     setTotal += listaproductos[i].cantidad*listaproductos[i].precio;
-    //     }
-    //     return (Math.round(total * 100) /100).toString();
-    // }
 
+    function generarLista() {
+        let lista = getCantidades()
+
+        let lista2 = listaproductos
+        let lista3 = []
+        for (const [key, value] of Object.entries(lista)) {
+            for (let i = 0; i < lista2.length; i++) {
+                if (key === lista2[i].itemcode) {
+                    lista3.push({
+                        cantidad: value,
+                        imagen: lista2[i].imagen,
+                        itemcode: lista2[i].itemcode,
+                        nombre: lista2[i].nombre,
+                        precio: lista2[i].precio,
+                    })
+                }
+            }
+        }
+        return lista3
+
+
+    }
 
     return (
         <div className='Container' onClick = {llamarTotal}>
@@ -40,12 +55,12 @@ function ContainerGeneral({listaproductos, id}) {
                 <div>
                     <h1 className='total'>Total:
                     {total1}
-                        
+
                     </h1>
 
                 </div>
             </div>
-            <Boton arr={listaproductos} id={id}/>
+            <Boton arr={generarLista()} id={id}/>
         </div>
     );
 }
