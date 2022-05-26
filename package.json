@@ -30,8 +30,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "sass": "^1.52.1",
-    "scss": "^0.2.4",
-    "webkit": "^0.0.0"
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
@@ -47,6 +46,7 @@
     "node-sass": "^7.0.1",
     "sass": "^1.51.0",
     "sass-loader": "^12.6.0",
+    "webkit": "^0.0.0",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"
