@@ -50,7 +50,7 @@ function App() {
         <>
             <Header/>
             {meme}
-            <AddToCart cantidad_disponible={3} nombre={"Laptop gaming Dell de 8GB de RAM, i7-7000, NVIDIA GTX"} itemcode={"AVPRfQAkWRx0m7OkmgZv"} precio={2002} imagen={"https://i.dell.com/sites/imagecontent/products/PublishingImages/inspiron-15-7567-laptop/CS1703G0002-laptop-inspiron-15-7000-gaming-pdp-polaris-01.jpg"}/>
+            <AddToCart cantidad_disponible={3} nombre={"Laptop gaming Dell de 8GB de RAM, i7-7000, NVIDIA GTX"} itemcode={"AVPRfQAkWRx0m7OkmgZv"} precio={2001} imagen={"https://i.dell.com/sites/imagecontent/products/PublishingImages/inspiron-15-7567-laptop/CS1703G0002-laptop-inspiron-15-7000-gaming-pdp-polaris-01.jpg"}/>
         </>
     );
 }
