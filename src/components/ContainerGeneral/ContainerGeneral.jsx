@@ -28,9 +28,9 @@ function ContainerGeneral({listaproductos, id}) {
         <div className='Container' onClick = {llamarTotal}>
             <div className='descrip'>
                 <ul className='grid-columns'>
-                    <h2>Product</h2>
-                    <h2>Item</h2>
-                    <h2>Price</h2>
+                    <h2 className='texto'>Product</h2>
+                    <h2 className='texto'>Amount</h2>
+                    <h2 className='texto'>Price</h2>
                 </ul>
             </div>
             <div className='display-productos'>

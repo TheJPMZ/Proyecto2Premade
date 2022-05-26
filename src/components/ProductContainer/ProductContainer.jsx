@@ -49,7 +49,7 @@ function ProductContainer({test}) {
         <div className='prodCon'>
             <div className='prodConGrid'>
                 <div className='grid-infoProduct'>
-                    <img src={test.imagen} height="250px" width="150px"></img>
+                    <img className='foto' src={test.imagen} height="230px" width="190px"></img>
                 </div>
                 <div className='grid-infoProduct'>
                     <div className='grid-infoProductSize'>

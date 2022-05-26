@@ -6,17 +6,6 @@ import firebase from "../../firebase";
 
 import ProductContainer from "../ProductContainer/ProductContainer";
 
-
-
-
-
-
-
-
-
-
-
-
 export default function Boton({arr,id}) {
 
     var porcentaje = 20;
