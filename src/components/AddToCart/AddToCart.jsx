@@ -5,7 +5,7 @@ function AddToCart({imagen, precio, itemcode, nombre, cantidad_disponible}) {
 
     const addCompra = () => {
 
-        firebase.firestore().collection('carrito').doc('ZsuFnGu76TWPQus6xGce').set(
+        firebase.firestore().collection('carrito').doc('TkE5GqpRfsKZRawSMaBP').set(
             {items: firebase.firestore.FieldValue.arrayUnion( {
                     "imagen":imagen, //Str: url de imagen
                     "precio":precio, //Int:200

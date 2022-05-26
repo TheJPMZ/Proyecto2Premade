@@ -14,7 +14,7 @@ export default function Header() {
 
     //Todo: Add user
         useEffect(() => {
-        firebase.firestore().collection("carrito").doc("ZsuFnGu76TWPQus6xGce").onSnapshot(snapshot => {
+        firebase.firestore().collection("carrito").doc("TkE5GqpRfsKZRawSMaBP").onSnapshot(snapshot => {
             setCount(snapshot.data().items.length);
         });
     }, []);
@@ -39,27 +39,6 @@ export default function Header() {
                 </IconButton>
             </Toolbar>
         </AppBar>
-
-        <div>
-            <ButtonGroup>
-                <Button
-                    aria-label="reduce"
-                    onClick={() => {
-                    setCount(Math.max(count - 1, 0));
-                    }}
-                    >
-                    <RemoveIcon fontSize="small" />
-                </Button>
-                    <Button
-                    aria-label="increase"
-                    onClick={() => {
-                    setCount(count + 1);
-                    }}
-                    >
-                    <AddIcon fontSize="small" />
-                </Button>
-            </ButtonGroup>
-        </div>
     </div>
 
 

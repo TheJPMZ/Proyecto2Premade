@@ -183,7 +183,7 @@ export default function Boton({arr,id}) {
             item.itemcode,
             (item.cantidad*item.precio)]
         ))
-        
+
         console.log(getTotal(arr))
 
     }

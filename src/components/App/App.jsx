@@ -34,22 +34,23 @@ function App() {
 
     const info = useInfo()
 
-    const actual = info.filter(item => item.id === 'ZsuFnGu76TWPQus6xGce')
+    const actual = info.filter(item => item.id === 'TkE5GqpRfsKZRawSMaBP')
 
     console.log(actual)
 
-    let meme
+    let itemsInCarrito
 
     if (actual.length !== 0) {
-        meme = actual.map((item) => <ContainerGeneral listaproductos={item.items} id={item.id}/>)
+        itemsInCarrito = actual.map((item) => <ContainerGeneral listaproductos={item.items} id={item.id}/>)
     }else {
-        meme =<div><h1 style={{color:"#FFFFFF"}}>No hay productos en el carrito</h1><button>Regresar a la tienda</button></div>
+        itemsInCarrito =<div className="noincarrito"><h1 style={{color:"#FFFFFF"}}>No hay productos en el carrito</h1><button>Regresar a la tienda</button></div>
     }
+
 
     return (
         <>
             <Header/>
-            {meme}
+            {itemsInCarrito}
             <AddToCart cantidad_disponible={3} nombre={"Laptop gaming Dell de 8GB de RAM, i7-7000, NVIDIA GTX"} itemcode={"AVPRfQAkWRx0m7OkmgZv"} precio={2001} imagen={"https://i.dell.com/sites/imagecontent/products/PublishingImages/inspiron-15-7567-laptop/CS1703G0002-laptop-inspiron-15-7000-gaming-pdp-polaris-01.jpg"}/>
         </>
     );
